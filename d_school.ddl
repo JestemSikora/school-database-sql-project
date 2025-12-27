@@ -534,6 +534,174 @@ INSERT INTO school_grades (id_grade, grade, grade_date, teachers_id_teacher, stu
 INSERT INTO school_grades (id_grade, grade, grade_date, teachers_id_teacher, students_id_student, subjects_id_subject) VALUES (99, 6, DATE '2024-09-29', 7, 50, 5);
 INSERT INTO school_grades (id_grade, grade, grade_date, teachers_id_teacher, students_id_student, subjects_id_subject) VALUES (100, 4, DATE '2024-10-12', 9, 50, 3);
 
+INSERT INTO school_subjects (id_subject, subject_name) VALUES (1, 'Matematyka'); 
+INSERT INTO school_subjects (id_subject, subject_name) VALUES (2, 'Język polski'); 
+INSERT INTO school_subjects (id_subject, subject_name) VALUES (3, 'Biologia'); 
+INSERT INTO school_subjects (id_subject, subject_name) VALUES (4, 'Informatyka'); 
+INSERT INTO school_subjects (id_subject, subject_name) VALUES (5, 'Język angielski'); 
+
+-- Obecności dla ucznia nr 1 (Kacper Kowalski)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (1, DATE '2024-09-15', 'Obecny', 1, 1, 1); 
+
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (2, DATE '2024-10-02', 'Obecny', 1, 2, 3); 
+
+-- Obecności dla ucznia nr 3 (Anna Nowak)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (3, DATE '2024-09-18', 'Obecny', 3, 2, 4); 
+
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (4, DATE '2024-10-10', 'Nieobecny', 3, 4, 6); 
+
+-- Obecności dla ucznia nr 10 (Julia Mazur)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (5, DATE '2024-09-22', 'Obecny', 10, 1, 5); 
+
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (6, DATE '2024-10-04', 'Spozniony', 10, 4, 6); 
+
+-- Obecności dla ucznia nr 25 (Monika Piotrowska)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (7, DATE '2024-09-14', 'Obecny', 25, 1, 9); 
+
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (8, DATE '2024-10-08', 'Obecny', 25, 2, 10); 
+
+-- Obecności dla ucznia nr 50 (Konrad Szymański)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (9, DATE '2024-09-29', 'Obecny', 50, 5, 7); 
+
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) 
+VALUES (10, DATE '2024-10-12', 'Nieobecny usp.', 50, 3, 9); 
+-- Rekordy od 11 do 35 (Wrzesień 2024)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (11, DATE '2024-09-02', 'Obecny', 2, 1, 1);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (12, DATE '2024-09-02', 'Obecny', 4, 3, 9);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (13, DATE '2024-09-03', 'Spozniony', 5, 4, 8);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (14, DATE '2024-09-03', 'Obecny', 6, 2, 13);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (15, DATE '2024-09-04', 'Nieobecny', 7, 3, 11);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (16, DATE '2024-09-04', 'Obecny', 8, 1, 1);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (17, DATE '2024-09-05', 'Obecny', 9, 5, 10);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (18, DATE '2024-09-05', 'Obecny', 11, 2, 3);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (19, DATE '2024-09-06', 'Nieobecny usp.', 12, 3, 12);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (20, DATE '2024-09-06', 'Obecny', 13, 4, 11);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (21, DATE '2024-09-09', 'Obecny', 14, 1, 14);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (22, DATE '2024-09-09', 'Spozniony', 15, 3, 15);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (23, DATE '2024-09-10', 'Obecny', 16, 5, 4);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (24, DATE '2024-09-10', 'Obecny', 17, 2, 6);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (25, DATE '2024-09-11', 'Obecny', 18, 3, 8);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (26, DATE '2024-09-11', 'Nieobecny', 19, 2, 10);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (27, DATE '2024-09-12', 'Obecny', 20, 4, 12);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (28, DATE '2024-09-12', 'Obecny', 21, 1, 14);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (29, DATE '2024-09-13', 'Obecny', 22, 3, 1);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (30, DATE '2024-09-13', 'Obecny', 23, 4, 5);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (31, DATE '2024-09-16', 'Spozniony', 24, 3, 7);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (32, DATE '2024-09-16', 'Obecny', 26, 3, 11);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (33, DATE '2024-09-17', 'Obecny', 27, 5, 13);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (34, DATE '2024-09-17', 'Nieobecny usp.', 28, 4, 15);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (35, DATE '2024-09-18', 'Obecny', 29, 5, 2);
+
+-- Rekordy od 36 do 60 (Październik 2024)
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (36, DATE '2024-10-01', 'Obecny', 30, 2, 6);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (37, DATE '2024-10-01', 'Obecny', 31, 3, 8);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (38, DATE '2024-10-02', 'Obecny', 32, 4, 10);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (39, DATE '2024-10-02', 'Spozniony', 33, 1, 12);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (40, DATE '2024-10-03', 'Obecny', 34, 2, 15);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (41, DATE '2024-10-03', 'Nieobecny', 35, 3, 2);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (42, DATE '2024-10-04', 'Obecny', 36, 4, 6);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (43, DATE '2024-10-04', 'Obecny', 37, 1, 8);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (44, DATE '2024-10-07', 'Obecny', 38, 5, 10);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (45, DATE '2024-10-07', 'Nieobecny usp.', 39, 4, 13);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (46, DATE '2024-10-08', 'Obecny', 40, 2, 1);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (47, DATE '2024-10-08', 'Obecny', 41, 4, 2);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (48, DATE '2024-10-09', 'Spozniony', 42, 3, 4);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (49, DATE '2024-10-09', 'Obecny', 43, 2, 7);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (50, DATE '2024-10-10', 'Obecny', 44, 5, 9);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (51, DATE '2024-10-10', 'Nieobecny', 45, 1, 11);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (52, DATE '2024-10-11', 'Obecny', 46, 3, 13);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (53, DATE '2024-10-11', 'Obecny', 47, 4, 15);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (54, DATE '2024-10-14', 'Obecny', 48, 1, 2);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (55, DATE '2024-10-14', 'Spozniony', 49, 2, 4);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (56, DATE '2024-10-15', 'Obecny', 50, 5, 7);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (57, DATE '2024-10-15', 'Obecny', 1, 3, 9);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (58, DATE '2024-10-16', 'Nieobecny', 3, 1, 11);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (59, DATE '2024-10-16', 'Obecny', 5, 2, 14);
+INSERT INTO school_attendance (id_attendance, "date", status, students_id_student, subjects_id_subject, teachers_id_teacher) VALUES (60, DATE '2024-10-17', 'Obecny', 10, 4, 15);
+-- Przypisania na podstawie historii ocen i profilu klas
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (1, 1, 1); -- Jan Kowalski (Matematyka) [cite: 37, 149]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (2, 13, 2); -- Grzegorz Adamski (Język polski) [cite: 49, 175]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (3, 9, 3); -- Ewa Wieczorek (Biologia) [cite: 45, 159]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (4, 2, 4); -- Anna Nowak (Informatyka) [cite: 38, 158]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (5, 7, 5); -- Marek Zając (Język angielski) [cite: 43, 156]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (6, 3, 2); -- Piotr Wiśniewski (Język polski) [cite: 39, 150]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (7, 4, 2); -- Katarzyna Wójcik (Język polski) [cite: 40, 153]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (8, 6, 4); -- Agnieszka Kaczmarek (Informatyka) [cite: 42, 154]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (9, 10, 5); -- Rafał Duda (Język angielski) [cite: 46, 160]
+
+INSERT INTO school_teacher_subjects (id_teacher_subject, teachers_id_teachers, subjects_id_subjects) 
+VALUES (10, 15, 5); -- Dominik Walczak (Język angielski) [cite: 51, 165]
+
+
+-- Notatka 1: Od Jan Kowalski (ID 1) dla Kacper Kowalski (ID 1)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (1, DATE '2024-09-20', 'Wzorowa postawa i aktywny udział w lekcji matematyki.', 1, 1);
+
+-- Notatka 2: Od Grzegorz Adamski (ID 13) dla Anna Nowak (ID 3)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (2, DATE '2024-09-25', 'Brak przygotowania do lekcji języka polskiego - brak zeszytu.', 13, 3);
+
+-- Notatka 3: Od Anna Nowak (ID 2) dla Julia Mazur (ID 10)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (3, DATE '2024-10-05', 'Wyjątkowe zaangażowanie w projekt zespołowy z informatyki.', 2, 10);
+
+-- Notatka 4: Od Ewa Wieczorek (ID 9) dla Monika Piotrowska (ID 25)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (4, DATE '2024-10-12', 'Reprezentowanie szkoły w konkursie biologicznym na szczeblu powiatowym.', 9, 25);
+
+-- Notatka 5: Od Marek Zając (ID 7) dla Konrad Szymański (ID 50)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (5, DATE '2024-10-15', 'Niewłaściwe zachowanie podczas przerwy i przeszkadzanie innym uczniom.', 7, 50);
+
+-- Notatka 6: Wystawiona przez Paweł Król (ID 8) dla Jan Nowak (ID 5)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (6, DATE '2024-10-20', 'Uczeń wykazał się dużą wiedzą poza-programową podczas dyskusji o historii.', 8, 5);
+
+-- Notatka 7: Wystawiona przez Magdalena Ostrowska (ID 11) dla Marcin Rutkowski (ID 40)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (7, DATE '2024-11-02', 'Spóźnienie na lekcję o ponad 15 minut bez usprawiedliwienia.', 11, 40);
+
+-- Notatka 8: Wystawiona przez Joanna Sikora (ID 12) dla Kamil Kozłowski (ID 20)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (8, DATE '2024-11-05', 'Bardzo dobre wyniki w testach sprawnościowych i pomoc w organizacji zawodów.', 12, 20);
+
+-- Notatka 9: Wystawiona przez Agnieszka Kaczmarek (ID 6) dla Igor Kaczmarek (ID 13)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (9, DATE '2024-11-10', 'Przeszkadzanie na lekcji poprzez używanie telefonu komórkowego.', 6, 13);
+
+-- Notatka 10: Wystawiona przez Dominik Walczak (ID 15) dla Beata Ostrowska (ID 43)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (10, DATE '2024-11-15', 'Wzorowe przygotowanie materiałów na gazetkę szkolną.', 15, 43);
+
+-- Notatka 11: Wystawiona przez Tomasz Krawczyk (ID 5) dla Karol Kowalski (ID 2)
+INSERT INTO school_note (id_note, "date", note_text, teachers_id_teacher, students_id_student) 
+VALUES (11, DATE '2024-11-18', 'Uczeń zniszczył mienie szkolne (porysowana ławka w sali 102).', 5, 2);
 
 -- Oracle SQL Developer Data Modeler Summary Report: 
 -- 
