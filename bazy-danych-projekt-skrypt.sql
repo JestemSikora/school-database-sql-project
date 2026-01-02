@@ -75,8 +75,55 @@ GROUP BY status, first_name, last_name
 ORDER BY negative_attendance DESC;
 
 
+-- Liczba nieobecności na konkretnych przedmiotach
+SELECT  
+    subjects_id_subject,
+    subjects.subject_name,
+    COUNT(*) AS absences
+FROM school_attendance attendance
+JOIN school_subjects subjects
+    ON attendance.subjects_id_subject = subjects.id_subject
+WHERE status = 'Nieobecny'
+GROUP BY subjects_id_subject, subjects.subject_name;
 
 
+-- Wszystkie możliwe oceny do uzyskania
+SELECT DISTINCT grade FROM school_grades;
+
+
+-- Który nauczyciel prowadzi jaki przedmiot
+SELECT 
+    subjects.id_subject ,teachers.first_name, teachers.last_name, subjects.subject_name
+FROM school_teacher_subjects te_subj
+JOIN school_subjects subjects
+    ON te_subj.subjects_id_subjects = subjects.id_subject
+JOIN school_teachers teachers
+    ON teachers.id_teacher = te_subj.teachers_id_teachers;
+    
+    
+-- Nauczyciele prowadzący przedmiot "Język Angielski"
+SELECT 
+    subjects.id_subject ,teachers.first_name, teachers.last_name, subjects.subject_name
+FROM school_teacher_subjects te_subj
+JOIN school_subjects subjects
+    ON te_subj.subjects_id_subjects = subjects.id_subject
+JOIN school_teachers teachers
+    ON teachers.id_teacher = te_subj.teachers_id_teachers
+WHERE subject_name = 'Język angielski'
+ORDER BY first_name ASC;
+
+
+-- Ile jest nauczycieli prowadzacych dany przedmiot
+SELECT 
+    subjects.id_subject, subjects.subject_name, 
+    COUNT(subject_name) AS count_of_teachers
+FROM school_teacher_subjects te_subj
+JOIN school_subjects subjects
+    ON te_subj.subjects_id_subjects = subjects.id_subject
+JOIN school_teachers teachers
+    ON teachers.id_teacher = te_subj.teachers_id_teachers
+GROUP BY subjects.id_subject, subjects.subject_name
+ORDER BY count_of_teachers DESC;
 
 
 
