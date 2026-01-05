@@ -125,5 +125,85 @@ JOIN school_teachers teachers
 GROUP BY subjects.id_subject, subjects.subject_name
 ORDER BY count_of_teachers DESC;
 
+-- Statystyki ocen według nauczycieli
+SELECT 
+    teachers.first_name, teachers.last_name,
+    ROUND(AVG(grades.grade),2) AS average_grade_by_teacher
+FROM school_grades grades
+JOIN school_teachers teachers
+    ON grades.teachers_id_teacher = teachers.id_teacher
+GROUP BY teachers.first_name, teachers.last_name, grades.teachers_id_teacher
+ORDER BY ROUND(AVG(grades.grade),2) DESC;
+
+
+-- Odchyły w statystykach ocen według nauczycieli (Z-Score)
+WITH StatystykiNauczycieli AS (
+    SELECT 
+        teachers.first_name, 
+        teachers.last_name,
+        ROUND(AVG(grades.grade), 2) AS average_grade_by_teacher
+    FROM school_grades grades
+    JOIN school_teachers teachers
+        ON grades.teachers_id_teacher = teachers.id_teacher
+    GROUP BY teachers.first_name, teachers.last_name
+),
+GlobalneStatystyki AS (
+    SELECT 
+        sn.*, 
+        AVG(sn.average_grade_by_teacher) OVER() AS avg_globalna,
+        STDDEV(sn.average_grade_by_teacher) OVER() AS stddev_globalne
+    FROM StatystykiNauczycieli sn 
+)
+SELECT 
+    first_name,
+    last_name,
+    average_grade_by_teacher,
+    ROUND((average_grade_by_teacher - avg_globalna) / NULLIF(stddev_globalne, 0), 2) AS z_score,
+    CASE 
+        WHEN (average_grade_by_teacher - avg_globalna) / NULLIF(stddev_globalne, 0) > 2 THEN 'Pobłażliwy (wysokie oceny)'
+        WHEN (average_grade_by_teacher - avg_globalna) / NULLIF(stddev_globalne, 0) < -2 THEN 'Surowy (niskie oceny)'
+        ELSE 'W normie'
+    END AS interpretacja
+FROM GlobalneStatystyki
+ORDER BY z_score DESC;
+
+
+-- Najtrudniejsze przedmioty - z najniższa średnia
+SELECT 
+    grades.subjects_id_subject, subjects.subject_name,
+    ROUND(AVG(grade),2) as average_grade_subject
+FROM school_grades grades
+JOIN school_subjects subjects
+    ON grades.subjects_id_subject = subjects.id_subject
+GROUP BY grades.subjects_id_subject, subjects.subject_name
+ORDER BY ROUND(AVG(grade),2) ASC;
+
+
+-- Liczba prowadzonych przedmiotów przez każdego nauczyciela
+SELECT 
+    t.first_name, 
+    t.last_name, 
+    COUNT(ts.subjects_id_subjects) AS subjects_count
+FROM school_teachers t
+LEFT JOIN school_teacher_subjects ts ON t.id_teacher = ts.teachers_id_teachers
+GROUP BY t.id_teacher, t.first_name, t.last_name
+ORDER BY subjects_count DESC;
+
+
+-- Procentowa frekwencja w podziale na klasy
+SELECT 
+    c.class_name,
+    COUNT(CASE WHEN a.status = 'Obecny' THEN 1 END) * 100.0 / COUNT(*) AS attendance_percentage
+FROM school_attendance a
+JOIN school_students s ON a.students_id_student = s.id_student
+JOIN school_classes c ON s.classes_id_class = c.id_class
+GROUP BY c.class_name
+ORDER BY attendance_percentage ASC;
+
+
+
+
+
+
 
 
